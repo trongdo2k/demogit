@@ -181,3 +181,61 @@ algoHeaders.forEach(header => {
     }
   });
 });
+
+const canvas = document.getElementById("priceChart");
+const ctx = canvas.getContext("2d");
+
+canvas.width = canvas.offsetWidth;
+canvas.height = 260;
+
+let prices = Array.from({ length: 30 }, () => 60 + Math.random() * 40);
+
+function drawLineChart() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.strokeStyle = "#ffd84d";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+
+    prices.forEach((price, index) => {
+        const x = (index / (prices.length - 1)) * canvas.width;
+        const y = canvas.height - price * 2.5;
+        index === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+
+    ctx.stroke();
+}
+
+function updateChart() {
+    prices.shift();
+    prices.push(60 + Math.random() * 40);
+    drawLineChart();
+}
+
+drawLineChart();
+setInterval(updateChart, 1200);
+const tones = document.querySelectorAll(".tone-switch span");
+const preview = document.querySelector(".content-preview");
+
+tones.forEach(tone => {
+    tone.addEventListener("click", () => {
+        tones.forEach(t => t.classList.remove("active"));
+        tone.classList.add("active");
+
+        if (tone.textContent === "Viral") {
+            preview.textContent =
+                "🚀 Introducing CheeratAI — redefining Web3 automation. AI meets alpha.";
+        } else {
+            preview.textContent =
+                "We are pleased to announce CheeratAI, an AI-powered Web3 automation platform.";
+        }
+    });
+});
+
+
+// Allocation bar entrance animation
+document.querySelectorAll(".seg").forEach((seg, i) => {
+    seg.style.animation = "fadeIn 0.6s ease forwards";
+    seg.style.animationDelay = `${i * 0.15}s`;
+});
+
