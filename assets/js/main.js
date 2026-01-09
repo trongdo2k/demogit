@@ -125,12 +125,6 @@ const countDownClock = (number = 100, format = 'seconds') => {
 		}, 1000);
 	}
 
-	function displayTimeLeft(seconds) {
-		daysElement.textContent = Math.floor(seconds / 86400);
-		hoursElement.textContent = Math.floor((seconds % 86400) / 3600);
-		minutesElement.textContent = Math.floor((seconds % 86400) % 3600 / 60);
-		secondsElement.textContent = seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
-	}
 }
 
 
