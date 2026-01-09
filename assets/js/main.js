@@ -233,3 +233,21 @@ document.querySelectorAll(".seg").forEach((seg, i) => {
     seg.style.animationDelay = `${i * 0.15}s`;
 });
 
+
+(() => {
+  const items = document.querySelectorAll(".cbxmp-anim");
+  const io = new IntersectionObserver(
+    entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("cbxmp-show");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  items.forEach(el => io.observe(el));
+})();
+
+
