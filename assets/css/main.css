@@ -163,7 +163,9 @@ p {
   background-position: right center;
   color: #fff;
 }
-
+.btn:hover{
+  color: white;
+}
 .theme-btn-2 {
   background-image: linear-gradient(to right, #365ae1 0%, #6286eb 50%, #365ae1 100%);
 }
