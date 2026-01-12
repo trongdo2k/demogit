@@ -3547,3 +3547,59 @@ footer{
         transform: scale(1.1);
     }
 }
+.fuX9_follow-wrapper {
+  width: 100%;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.fuX9_title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.fuX9_socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.fuX9_icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.fuX9_icon svg {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+}
+
+.fuX9_icon:hover {
+  transform: translateY(-4px);
+  background: #ffffff;
+}
+
+.fuX9_icon:hover svg {
+  fill: #000000;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .fuX9_title {
+    font-size: 16px;
+  }
+
+  .fuX9_icon {
+    width: 40px;
+    height: 40px;
+  }
+}
